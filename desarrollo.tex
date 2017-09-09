@@ -15,11 +15,11 @@
 	\frametitle{Descripción}
 	
 		\begin{block}{Motivación}
-			Precio alto, uso dentro de la facultad para minimizar la cantidad de papeles.
+			Precio alto de adquisicion , uso dentro de la facultad para minimizar la cantidad de papeles.
 		\end{block}
 
 		\begin{block}{Características generales}
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+			El cartel tendra dos rengones para poder mostrar dos mensajes independientes, con una resolución de 7x5 LEDs por caractér como minimo y con una longitud aproximada de entre 10 y 15 caracteres por renglón.
 		\end{block}
 
 \end{frame}
@@ -59,26 +59,37 @@
 \subsection{Presupuesto}
 \begin{frame}
 	\frametitle{Presupuesto}
-
+	\FPeval{\cantLEDs}{round( 2*15*7*5 , 0)}
+	\begin{table}[]
+		\centering
+		\begin{spreadtab}{{tabular}{cccc}}
+			@ Item				& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
+			@ LED color X		& \cantLEDs		& 0.5				& b2*c2	\\
+			@ Cables			& :={2} m		& 2					& b3*c3  \\
+			@ Estaño p/ soldar	& 1				& 100				& b4*c4  \\
+			@ Chip X			& 2*15			& 10				& b5*c5  \\
+			@ Edu-ciaa			& 1				& 1000				& b6*c6  \\ \hline
+			@ Total				& 				&					& sum(d2:d6)	 \\ \hline
+		\end{spreadtab}
+	\end{table}
 \end{frame}
 
 \subsection{Cronograma}
 \begin{frame}
 	\frametitle{Cronograma}
-		\begin{table}[]
-			\centering
-			\caption{Cronograma primera etapa}
-			\label{my-label}
-			\begin{tabular}{cccc}
-				Encargado & Descripción & Fecha inicial & Fecha final \\ \hline
-				Ternouski & Tarea Hw 1  & 12/09/17       & 12/12/17    \\
- 				          & Tarea  2 dsd     & Hw            & 1           \\
-				          &             &               &             \\
-				          &             &               &             \\
-				          &             &               &             \\
-				          &             &               &             \\ \hline
-\end{tabular}
-\end{table}
+	\begin{table}[]
+		\centering
+		\caption{Cronograma primera etapa}
+		\begin{tabular}{cccc}
+			Encargado & Descripción & Fecha inicial & Fecha final \\ \hline
+			Ternouski & Tarea Hw 1  & 12/09/17       & 12/12/17    \\
+						& Tarea  2 dsd     & Hw            & 1           \\
+						&             &               &             \\
+						&             &               &             \\
+						&             &               &             \\
+						&             &               &             \\ \hline
+		\end{tabular}
+	\end{table}
 \end{frame}
 
 \subsection{División de tareas del grupo}
