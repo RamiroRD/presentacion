@@ -57,6 +57,22 @@
 \subsection{Requerimientos}
 \begin{frame}
 	\frametitle{Requerimientos}
+	\begin{block}{Hardware}
+		\begin{itemize}
+			\item 30 chips MAX1719 o MAX1721
+			\item 30 matices 8x8 1388ASR o 1588AS
+			\item Un microcontrolador EDU-CIAA
+			\item Modulo ESP8266
+		\end{itemize}
+	\end{block}
+	\begin{block}{Software}
+		\begin{itemize}
+			\item Host con capacidad para bootstrap 4
+			% Y algun lenguaje para hacer el sistema de autentificacion
+			\item 
+		\end{itemize}
+	\end{block}
+	
 
 \end{frame}
 
@@ -88,17 +104,16 @@
 \subsection{Presupuesto}
 \begin{frame}
 	\frametitle{Presupuesto}
-	\FPeval{\cantLEDs}{round( 2*15*7*5 , 0)}
+	\FPeval{\cantLEDs}{round( 2*15 , 0)}
 	\begin{table}[]
 		\centering
 		\begin{spreadtab}{{tabular}{cccc}}
 			@ Item				& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
-			@ LED color X		& \cantLEDs		& 0.5				& b2*c2	\\
+			@ MAX1719 \& Matriz	& \cantLEDs		& 70				& b2*c2	\\
 			@ Cables			& :={2} m		& 2					& b3*c3  \\
 			@ Estaño          	& 1				& 100				& b4*c4  \\
-			@ Chip X			& 2*15			& 10				& b5*c5  \\
-			@ EDU-CIAA			& 1				& 1000				& b6*c6  \\ \hline
-			@ Total				& 				&					& sum(d2:d6)	 \\ \hline
+			@ EDU-CIAA			& 1				& 1000				& b5*c5  \\ \hline
+			@ Total				& 				&					& sum(d2:d5)	 \\ \hline
 		\end{spreadtab}
 	\end{table}
 \end{frame}
