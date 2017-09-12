@@ -58,8 +58,14 @@
 \subsection{Explicación funcional del HW y SW}
 \begin{frame}
 	\frametitle{Explicación funcional}
+	\begin{itemize}
+		 \item El sistema se conecta una red WiFi preexistente.
+		 \item El usuario accede a un panel mediante HTTPS y se autentica
+		 \item El usuario ingresa el anuncio a mostrar
+		 \item El mensaje se desplaza a lo largo del cartel a modo de marquesina
+	\end{itemize}
 	
-	El microcontrolador que maneja el cartel compuesto de LED's, es el encargado de establecer una red WIFI (sin acceso a internet) sobre la cual hostea un panel de configuración. Por medio de un usuario y clave, se accede al panel vía https y se puede cambiar el anuncio a representar en el cartel. El mensaje a representar, se desplaza a lo largo de la matriz de LED's a modo de marquesina y, dentro del panel, se pueden configurar determinados parámetros como por ejemplo, la velocidad a la que se mueve.
+	% El microcontrolador que maneja el cartel compuesto de LED's, es el encargado de establecer una red WIFI (sin acceso a internet) sobre la cual hostea un panel de configuración. Por medio de un usuario y clave, se accede al panel vía https y se puede cambiar el anuncio a representar en el cartel. El mensaje a representar, se desplaza a lo largo de la matriz de LED's a modo de marquesina y, dentro del panel, se pueden configurar determinados parámetros como por ejemplo, la velocidad a la que se mueve.
 
 \end{frame}
 
@@ -92,13 +98,13 @@
 		\centering
 		\caption{Cronograma primera etapa}
 		\begin{tabular}{cccc}
-			Encargado & Descripción & Fecha inicial & Fecha final \\ \hline
-			Ternouski & Tarea Hw 1  & 12/09/17       & 12/12/17    \\
-						& Tarea  2 dsd     & Hw            & 1           \\
-						&             &               &             \\
-						&             &               &             \\
-						&             &               &             \\
-						&             &               &             \\ \hline
+			Encargado & Descripción   & Fecha inicial & Fecha final \\ \hline
+			Ternouski & Tarea Hw 1    & 12/09/17      & 12/12/17    \\
+					  & Tarea  2      & Hw            & 1           \\
+					  &               &               &             \\
+					  &               &               &             \\
+					  &               &               &             \\
+					  &               &               &             \\ \hline
 		\end{tabular}
 	\end{table}
 \end{frame}
