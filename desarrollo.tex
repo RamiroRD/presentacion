@@ -11,6 +11,10 @@
 % Modular la velocidad
 % Juego mario, dinosaurio chrome
 
+%% DEFINO LA CANTIDAD DE LETRAS POR RENGLON %%
+\newcommand\cantLetrasRenglon{10}
+%% ---------------------------------------- %%
+
 \begin{frame}
 	\frametitle{Descripción}
 	
@@ -24,7 +28,7 @@
 		\begin{block}{Características generales}
 			\begin{itemize}
 				\item Caracteres de 7x5 píxeles
-				\item Dos renglones de 10-15 caracteres
+				\item Dos renglones de \cantLetrasRenglon\ caracteres
 				\item Control por WiFi
 				\item Animación programable
 			\end{itemize}
@@ -130,7 +134,7 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 \subsection{Presupuesto}
 \begin{frame}
 	\frametitle{Presupuesto}
-	\FPeval{\cantLEDs}{round( 2*15 , 0)}
+	\FPeval{\cantLEDs}{round( 2*\cantLetrasRenglon , 0)}
 	\begin{table}[]
 		\centering
 		\begin{spreadtab}{{tabular}{cccc}}
@@ -150,7 +154,7 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
     \begin{figure}[htbp]
 		\begin{center}
 			\includegraphics[width=\textwidth]{diagramas/cronograma.pdf}
-			\caption{asdasd.}
+			\caption{Asignación de tiempos aproximados.}
 			\label{fig:diagrama-cronograma}
 		\end{center}
 	\end{figure}
@@ -159,11 +163,12 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 \subsection{División de tareas del grupo}
 \begin{frame}
 	\frametitle{División de tareas del grupo}
-	García, Agustín: Programación de la librería WIFI y del sistema a bajo nivel.
-	\\Romero Dapozo, Ramiro: Diseño del circuito electrónico y programación librería WIFI.
-	\\Ternouski, Nahuel: Modelado del sistema y diseño del Web Server.
-	\\Levy, Santiago: Diseño del circuito electrónico y modelado del sistema.
-
+	\begin{itemize}
+		\item \textbf{García}: Programación de la librería WIFI y del sistema a bajo nivel.
+		\item \textbf{Romero Dapozo}: Diseño del circuito electrónico y programación librería WIFI.
+		\item \textbf{Ternouski}: Modelado del sistema y diseño del Web Server.
+		\item \textbf{Levy}: Diseño del circuito electrónico y modelado del sistema.
+	\end{itemize}
 \end{frame}
 
 %------------------------------------------------
