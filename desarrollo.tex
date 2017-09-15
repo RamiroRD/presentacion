@@ -42,14 +42,14 @@
 	\begin{block}{Objetivos primarios}
 		\begin{itemize}
 			\item Diseñar el Hardware (PCB, Cartel)
-			\item Escribir el Software que se ejecutará en el microcontrolador
+			\item Desarrollar el Software que se ejecutará en el microcontrolador
 			\item Armar prototipo funcional
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Objetivo secundario}
 		\begin{itemize}
-			\item Escribir biblioteca para la CIAA que abstraiga comandos AT para módulo Espressif ESP8266
+			\item Desarrollar biblioteca para la CIAA que abstraiga comandos AT para módulo Espressif ESP8266
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -140,11 +140,15 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 		\caption{Presupuesto tentativo. (Cantidades en ARS)}
 		\begin{spreadtab}{{tabular}{cccc}}
 			@ Item				& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
-			@ MAX1719 \& Matriz	& \cantLEDs		& 70				& b2*c2	\\
-			@ Cables			& :={2} m		& 2					& b3*c3  \\
-			@ Estaño          	& 1				& 100				& b4*c4  \\
-			@ EDU-CIAA			& 1				& 1000				& b5*c5  \\ \hline
-			@ Total				& 				&					& sum(d2:d5)	 \\ \hline
+			@ Componentes varios& :={} -		& :={} -			& 80  \\
+			@ PCB				& \cantLEDs		& \$ :={30}			& b3*c3  \\
+			@ Estaño          	& 1				& \$ :={100}		& b4*c4  \\
+			@ Gabinete         	& 1				& \$ :={2000}		& b5*c5  \\
+			@ ESP8266			& 1				& \$ :={200}		& b6*c6  \\
+			@ EDU-CIAA			& 1				& \$ :={1000}		& b7*c7  \\
+			@ MAX7219 \& Matriz	& \cantLEDs		& \$ :={100}		& b8*c8	 \\
+			@ Horas hombre		& :={20*5*3} hs	& \$ :={200}		& b9*c9  \\ \hline
+			@ Total				& 				&					& sum(d2:d9)	 \\ \hline
 		\end{spreadtab}
 	\end{table}
 \end{frame}
@@ -154,7 +158,7 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 	\frametitle{Cronograma}
     \begin{figure}[htbp]
 		\begin{center}
-			\includegraphics[width=\textwidth]{diagramas/cronograma-2.pdf}
+			\includegraphics[width=1.03\textwidth]{diagramas/cronograma-2.pdf}
 			\caption{Asignación de tiempos aproximados.}
 			\label{fig:diagrama-cronograma}
 		\end{center}
