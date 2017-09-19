@@ -63,20 +63,18 @@
 	\frametitle{Requerimientos}
 	\begin{block}{Funcionales}
 			\begin{itemize}
-			\item Desarrollo de cartel lumínico LED capaz de mostrar un mensaje en marquesina, configurable mediante WiFi
-			\item Construcción e implementación del sistema
-				\end{itemize}	
-		
+				\item Desarrollo de cartel lumínico LED capaz de mostrar un mensaje en marquesina, configurable mediante WiFi
+				\item Construcción e implementación del sistema.
+			\end{itemize}
 		\end{block}
 
 	\begin{block}{De Hardware}
-El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de LEDs controladas por los circuitos correspondientes
-\end{block}
+		El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de LEDs controladas por los circuitos correspondientes
+	\end{block}
 
 	\begin{block}{De Software}
- Debe poder configurarse el mensaje del cartel mediante un servicio HTML accesible por WiFi.
-
-\end{block}
+		Debe poder configurarse el mensaje del cartel mediante aplicación de escritorio accesible por WiFi.
+	\end{block}
 
 	\begin{block}{De Usuario - No Aplica}
 	\end{block}
@@ -117,7 +115,7 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 	\frametitle{Explicación funcional}
 	\begin{itemize}
 		 \item El sistema se conecta una red WiFi preexistente y hostea un panel de configuración accesible a través de la red
-		 \item El usuario accede al  panel mediante HTTPS y se autentica
+		 \item El usuario accede al  panel mediante SSL y se autentica
 		 \item El usuario ingresa el anuncio a mostrar y las opciones deseadas
 		 \item El micro recibe el comando y enciende los LEDs de manera que muestren el mensaje
 		 \item El mensaje se desplaza a lo largo del cartel a modo de marquesina
