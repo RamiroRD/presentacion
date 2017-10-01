@@ -42,14 +42,14 @@
 	\begin{block}{Objetivos primarios}
 		\begin{itemize}
 			\item Diseñar el Hardware (PCB, Cartel)
-			\item Escribir el Software que se ejecutará en el microcontrolador
+			\item Desarrollar el Software que se ejecutará en el microcontrolador
 			\item Armar prototipo funcional
 		\end{itemize}
 	\end{block}
 	
 	\begin{block}{Objetivo secundario}
 		\begin{itemize}
-			\item Escribir biblioteca para la CIAA que abstraiga comandos AT para módulo Espressif ESP8266
+			\item Desarrollar biblioteca para la CIAA que abstraiga comandos AT para módulo Espressif ESP8266
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -73,7 +73,7 @@
 	\end{block}
 
 	\begin{block}{De Software}
- 		Debe poder configurarse el mensaje del cartel mediante un servicio HTML accesible por WiFi.
+		Debe poder configurarse el mensaje del cartel mediante aplicación de escritorio accesible por WiFi.
 	\end{block}
 
 	\begin{block}{De Usuario - No Aplica}
@@ -115,7 +115,7 @@
 	\frametitle{Explicación funcional}
 	\begin{itemize}
 		 \item El sistema se conecta una red WiFi preexistente y hostea un panel de configuración accesible a través de la red
-		 \item El usuario accede al  panel mediante HTTPS y se autentica
+		 \item El usuario accede al  panel mediante SSL y se autentica
 		 \item El usuario ingresa el anuncio a mostrar y las opciones deseadas
 		 \item El micro recibe el comando y enciende los LEDs de manera que muestren el mensaje
 		 \item El mensaje se desplaza a lo largo del cartel a modo de marquesina
@@ -136,14 +136,18 @@
 	\FPeval{\cantChips}{round( 1*\cantLetrasRenglon , 0)}
 	\begin{table}[]
 		\centering
+		\caption{Presupuesto tentativo. (Cantidades en ARS)}
 		\begin{spreadtab}{{tabular}{cccc}}
-			@ Item		& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
-			@ Cables	& :={2} m		& 2					& b2*c2  \\
-			@ Estaño	& 2				& 6				& b3*c3  \\
-			@ MAX1719	& \cantChips	& 45				& b4*c4  \\
-			@ LEDs		& \cantLEDs		& 1					& b5*c5  \\
-			@ EDU-CIAA	& 1				& 1000				& b6*c6  \\ \hline
-			@ Total		& 				&					& sum(d2:d6)	 \\ \hline
+			@ Item				& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
+			@ Componentes varios& :={} -		& :={} -			& 80  \\
+			@ PCB				& \cantLEDs		& \$ :={30}			& b3*c3  \\
+			@ LEDs				& \cantLEDs		& \$ :={1}			& b4*c4  \\
+			@ Gabinete         	& 1				& \$ :={2000}		& b5*c5  \\
+			@ ESP8266			& 1				& \$ :={200}		& b6*c6  \\
+			@ EDU-CIAA			& 1				& \$ :={1000}		& b7*c7  \\
+			@ MAX7219			& \cantChips	& \$ :={45}			& b8*c8	 \\
+			@ Horas hombre		& :={20*5*3} hs	& \$ :={200}		& b9*c9  \\ \hline
+			@ Total				& 				&					& sum(d2:d9)	 \\ \hline
 		\end{spreadtab}
 	\end{table}
 \end{frame}
