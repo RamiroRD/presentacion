@@ -5,14 +5,14 @@
 \subsection{Descripción}
  
 %%%% IDEAS %%%%
-% Dos renglones
-% Rojo, Naranja o verde
-% Bloque de 7x5 minimo.. entre 10 y 15 bloques (letras) 
+% Modulable y expandible
+% Color LEDs blanco
+% Bloque de 8x7 minimo..
 % Modular la velocidad
 % Juego mario, dinosaurio chrome
 
 %% DEFF CANTIDAD DE LETRAS POR RENGLON %%
-\newcommand\cantLetrasRenglon{10}
+\newcommand\cantLetrasRenglon{3}
 %% ----------------------------------- %%
 
 \begin{frame}
@@ -27,8 +27,8 @@
 
 		\begin{block}{Características generales}
 			\begin{itemize}
-				\item Caracteres de 7x5 píxeles
-				\item Dos renglones de \cantLetrasRenglon\ caracteres
+				\item Caracteres de 8x7 píxeles
+				\item Caracteres modulables
 				\item Control por WiFi
 				\item Animación programable
 			\end{itemize}
@@ -62,21 +62,19 @@
 \begin{frame}
 	\frametitle{Requerimientos}
 	\begin{block}{Funcionales}
-			\begin{itemize}
+		\begin{itemize}
 			\item Desarrollo de cartel lumínico LED capaz de mostrar un mensaje en marquesina, configurable mediante WiFi
 			\item Construcción e implementación del sistema
-				\end{itemize}	
-		
-		\end{block}
+		\end{itemize}
+	\end{block}
 
 	\begin{block}{De Hardware}
-El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de LEDs controladas por los circuitos correspondientes
-\end{block}
+		El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de LEDs controladas por los circuitos correspondientes
+	\end{block}
 
 	\begin{block}{De Software}
- Debe poder configurarse el mensaje del cartel mediante un servicio HTML accesible por WiFi.
-
-\end{block}
+ 		Debe poder configurarse el mensaje del cartel mediante un servicio HTML accesible por WiFi.
+	\end{block}
 
 	\begin{block}{De Usuario - No Aplica}
 	\end{block}
@@ -134,26 +132,29 @@ El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de
 \subsection{Presupuesto}
 \begin{frame}
 	\frametitle{Presupuesto}
-	\FPeval{\cantLEDs}{round( 2*\cantLetrasRenglon , 0)}
+	\FPeval{\cantLEDs}{round( 64*\cantLetrasRenglon , 0)}
+	\FPeval{\cantChips}{round( 1*\cantLetrasRenglon , 0)}
 	\begin{table}[]
 		\centering
 		\begin{spreadtab}{{tabular}{cccc}}
-			@ Item				& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
-			@ MAX1719 \& Matriz	& \cantLEDs		& 70				& b2*c2	\\
-			@ Cables			& :={2} m		& 2					& b3*c3  \\
-			@ Estaño          	& 1				& 100				& b4*c4  \\
-			@ EDU-CIAA			& 1				& 1000				& b5*c5  \\ \hline
-			@ Total				& 				&					& sum(d2:d5)	 \\ \hline
+			@ Item		& @ Unidades	& @ Precio unidad	& @ Subtotal	\\ \hline
+			@ Cables	& :={2} m		& 2					& b2*c2  \\
+			@ Estaño	& 2				& 6				& b3*c3  \\
+			@ MAX1719	& \cantChips	& 45				& b4*c4  \\
+			@ LEDs		& \cantLEDs		& 1					& b5*c5  \\
+			@ EDU-CIAA	& 1				& 1000				& b6*c6  \\ \hline
+			@ Total		& 				&					& sum(d2:d6)	 \\ \hline
 		\end{spreadtab}
 	\end{table}
 \end{frame}
+
 
 \subsection{Cronograma}
 \begin{frame}
 	\frametitle{Cronograma}
     \begin{figure}[htbp]
 		\begin{center}
-			\includegraphics[width=\textwidth]{diagramas/cronograma-2.pdf}
+			\includegraphics[width=\textwidth]{diagramas/cronograma.pdf}
 			\caption{Asignación de tiempos aproximados.}
 			\label{fig:diagrama-cronograma}
 		\end{center}
