@@ -21,14 +21,14 @@
 		\begin{block}{Motivación}
 			\begin{itemize}
 				\item Alto costo de productos en el mercado
-				\item Reducción del uso del papel
+				\item Reducción del uso de papel
 			\end{itemize}
 		\end{block}
 
 		\begin{block}{Características generales}
 			\begin{itemize}
 				\item Caracteres de 8x7 píxeles
-				\item Caracteres modulables
+				\item Módulos expansibles
 				\item Control por WiFi
 				\item Animación programable
 			\end{itemize}
@@ -41,15 +41,10 @@
 	\frametitle{Objetivos}
 	\begin{block}{Objetivos primarios}
 		\begin{itemize}
-			\item Diseñar el Hardware (PCB, Cartel)
+			\item Diseñar e implementar el Hardware (PCB, Cartel)
+			\item Diseñar e implementar protocolo de comunicación
 			\item Desarrollar el Software que se ejecutará en el microcontrolador
-			\item Armar prototipo funcional
-		\end{itemize}
-	\end{block}
-	
-	\begin{block}{Objetivo secundario}
-		\begin{itemize}
-			\item Desarrollar biblioteca para la CIAA que abstraiga comandos AT para módulo Espressif ESP8266
+			\item Desarrollar el Software que controla el cartel
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -63,40 +58,21 @@
 	\frametitle{Requerimientos}
 	\begin{block}{Funcionales}
 		\begin{itemize}
-			\item Desarrollo de cartel lumínico LED capaz de mostrar un mensaje en marquesina, configurable mediante WiFi
-			\item Construcción e implementación del sistema
+			\item El cartel debe ser configurable a través de WiFi
+			\item El contenido que muestre el cartel debe ser persistente
+			\item El control del cartel debe requerir autenticación
 		\end{itemize}
 	\end{block}
 
-	\begin{block}{De Hardware}
-		El sistema está compuesto por la CIAA, el ESP8266, y un conjunto de matrices de LEDs controladas por los circuitos correspondientes
+	\begin{block}{No funcionales}
+		\begin{itemize}
+			\item El tiempo de desarrollo no debe ser mayor a seis semanas
+			\item Debe usarse la EDU-CIAA
+			\item La conexión debe estar cifrada
+		\end{itemize}
 	\end{block}
 
-	\begin{block}{De Software}
-		Debe poder configurarse el mensaje del cartel mediante aplicación de escritorio accesible por WiFi.
-	\end{block}
-
-	\begin{block}{De Usuario - No Aplica}
-	\end{block}
 \end{frame}
-%	\begin{block}{Hardware}
-%		\begin{itemize}
-%			\item 30 chips MAX1719 o MAX1721
-%			\item 30 matices 8x8 1388ASR o 1588AS
-%			\item Un microcontrolador EDU-CIAA
-%			\item Modulo ESP8266
-%		\end{itemize}
-%	\end{block}
-%	\begin{block}{Software}
-%		\begin{itemize}
-%			\item Host con capacidad para bootstrap 4
-%			% Y algun lenguaje para hacer el sistema de autentificacion
-%			\item 
-%		\end{itemize}
-%	\end{block}
-	
-
-
 
 \subsection{Diagrama en bloques del sistema}
 \begin{frame}
@@ -114,11 +90,10 @@
 \begin{frame}
 	\frametitle{Explicación funcional}
 	\begin{itemize}
-		 \item El sistema se conecta una red WiFi preexistente y hostea un panel de configuración accesible a través de la red
-		 \item El usuario accede al  panel mediante SSL y se autentica
-		 \item El usuario ingresa el anuncio a mostrar y las opciones deseadas
-		 \item El micro recibe el comando y enciende los LEDs de manera que muestren el mensaje
-		 \item El mensaje se desplaza a lo largo del cartel a modo de marquesina
+		 \item El sistema se conecta una red WiFi preexistente y escucha conexiones TLS
+		 \item El usuario accede, autenticándose, al cartel utilizando una aplicación de escritorio
+		 \item El usuario ingresa el anuncio a mostrar junto a los parámetros de animación (parpadeo y velocidad de desplazamiento)
+		 \item El sistema interpreta la orden y controla el cartel como corresponda
 	\end{itemize}
 	
 	% El microcontrolador que maneja el cartel compuesto de LED's, es el encargado de establecer una red WIFI (sin acceso a internet) sobre la cual hostea un panel de configuración. Por medio de un usuario y clave, se accede al panel vía https y se puede cambiar el anuncio a representar en el cartel. El mensaje a representar, se desplaza a lo largo de la matriz de LED's a modo de marquesina y, dentro del panel, se pueden configurar determinados parámetros como por ejemplo, la velocidad a la que se mueve.
@@ -169,10 +144,10 @@
 \begin{frame}
 	\frametitle{División de tareas del grupo}
 	\begin{itemize}
-		\item \textbf{García}: Programación de la librería WIFI y del sistema a bajo nivel.
-		\item \textbf{Romero Dapozo}: Diseño del circuito electrónico y programación librería WIFI.
-		\item \textbf{Ternouski}: Modelado del sistema y diseño del Web Server.
-		\item \textbf{Levy}: Diseño del circuito electrónico y modelado del sistema.
+		\item \textbf{García}: Diseño del protocolo y desarrollo de software para ESP8266 y EDU-CIAA
+		\item \textbf{Romero Dapozo}: Diseño del protocolo, desarrollo de Software para ESP8266 y aplicación de escritorio
+		\item \textbf{Ternouski}: Diseño y armado del Hardware y aplicación de escritorio
+		\item \textbf{Levy}: Diseño y armado del Hardware
 	\end{itemize}
 \end{frame}
 
